@@ -74,6 +74,10 @@ document.addEventListener("DOMContentLoaded", () => {
   function initFlagImages() {
     flagImages.forEach((image) => {
       const key = image.dataset.flagKey;
+      if (key === "sg") {
+        image.src = "./images/cosingapore.png";
+        return;
+      }
       const dataUri = encodedFlagUrls[key];
       if (!dataUri) return;
       image.src = dataUri;
